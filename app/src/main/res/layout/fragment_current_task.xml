@@ -14,19 +14,34 @@
         android:padding="10dp">
 
         <ImageView
+            android:id="@+id/weatherimage"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:background="@drawable/sun"/>
+            android:src="@drawable/sun"/>
         <TextView
+            android:id="@+id/temp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="-5"
             android:textSize="40dp"
             android:layout_marginLeft="40dp"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+        <ImageView
+            android:id="@+id/windimage"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/arrow"/>
         <TextView
+            android:id="@+id/speed"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Вчера"
+            android:text="-5"
             android:textSize="40dp"
             android:layout_marginLeft="40dp"/>
     </LinearLayout>
@@ -39,40 +54,12 @@
         <ImageView
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:background="@drawable/cloudy"/>
+            android:src="@drawable/humidity"/>
         <TextView
+            android:id="@+id/humid"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="-10"
-            android:textSize="40dp"
-            android:layout_marginLeft="40dp"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Сегодня"
-            android:textSize="40dp"
-            android:layout_marginLeft="40dp"/>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:padding="10dp">
-
-        <ImageView
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:background="@drawable/snow"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="-21"
-            android:textSize="40dp"
-            android:layout_marginLeft="40dp"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Завтра"
+            android:text="-5"
             android:textSize="40dp"
             android:layout_marginLeft="40dp"/>
     </LinearLayout>

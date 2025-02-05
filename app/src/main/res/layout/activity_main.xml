@@ -27,5 +27,4 @@
         android:id="@+id/finishTask"
         android:layout_below="@id/container_fragm"
         android:layout_toEndOf="@id/currentTask" />
-
 </RelativeLayout>

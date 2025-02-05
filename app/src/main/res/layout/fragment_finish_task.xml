@@ -13,104 +13,60 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:padding="10dp">
-        <LinearLayout
+        <TextView
+            android:id="@+id/weather"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="10dp">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Солнечно"
-                android:textSize="30dp" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Безветрено"
-                android:textSize="30dp"/>
-        </LinearLayout>
+            android:text="Солнечно"
+            android:textSize="30dp" />
+
         <TextView
+            android:id="@+id/temp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="-5"
             android:textSize="30dp"
             android:layout_marginLeft="10dp"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Вчера"
-            android:textSize="30dp"
-            android:layout_marginLeft="20dp"/>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:padding="10dp">
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="10dp">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Облачно"
-                android:textSize="30dp" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Ветер: 2м/c"
-                android:textSize="30dp" />
-        </LinearLayout>
         <TextView
+            android:id="@+id/winddeg"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="-10"
+            android:text="Солнечно"
+            android:textSize="30dp" />
+
+        <TextView
+            android:id="@+id/speed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="-5"
             android:textSize="30dp"
             android:layout_marginLeft="10dp"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Сегодня"
-            android:textSize="30dp"
-            android:layout_marginLeft="20dp"/>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:padding="10dp">
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="10dp">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Снег"
-                android:textSize="30dp" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Ветер: 3м/c"
-                android:textSize="30dp" />
-        </LinearLayout>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="-21"
+            android:text="Влажность:"
+            android:textSize="30dp" />
+
+        <TextView
+            android:id="@+id/humid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="-5"
             android:textSize="30dp"
             android:layout_marginLeft="10dp"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Завтра"
-            android:textSize="30dp"
-            android:layout_marginLeft="20dp"/>
     </LinearLayout>
+
 
 </LinearLayout>
