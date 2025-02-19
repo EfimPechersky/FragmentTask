@@ -6,4 +6,8 @@
         <item>Omsk</item>
         <item>Chelyabinsk</item>
     </string-array>
+    <string name="snow">Снег</string>
+    <string name="clear">Солнечно</string>
+    <string name="cloudy">Облачно</string>
+
 </resources>

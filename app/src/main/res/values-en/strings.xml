@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string name="app_name">FragmentApp</string>
+<string name="api">78e056c652997738cf55e5a6f0b7a40b</string>
+<string-array name="weather_types">
+<item>Irkutsk</item>
+<item>Omsk</item>
+<item>Chelyabinsk</item>
+</string-array>
+    <string name="snow">Snow</string>
+    <string name="clear">Clear</string>
+    <string name="cloudy">Cloudy</string>
+</resources>

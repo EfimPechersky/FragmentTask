@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.fragment.app.Fragment
+import java.util.Locale
 
 private var TEMP = "param1"
 private var MAIN = "param2"
@@ -39,9 +40,13 @@ class FinishTaskFragment: Fragment() {
         var temptext: TextView = view.findViewById(R.id.temp)
         temptext.text=temp+" c"
         var weather: TextView = view.findViewById(R.id.weather)
-        weather.text=main
+        when (main){
+            "Snow"->{weather.text=getString(R.string.snow)}
+            "Clear"->{weather.text=getString(R.string.clear)}
+            "Cloudy"->{weather.text=getString(R.string.cloudy)}
+        }
         var degtext: TextView = view.findViewById(R.id.winddeg)
-        degtext.text = "Угол ветра:"+deg
+        degtext.text = deg
         var speedtext: TextView = view.findViewById(R.id.speed)
         speedtext.text=speed+" м/c"
         var humtext:TextView = view.findViewById(R.id.humid)

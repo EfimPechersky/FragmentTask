@@ -18,7 +18,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="С картинками"
+        android:text="With icons"
         android:id="@+id/currentTask"
         android:layout_below="@id/container_fragm"
         android:layout_margin="10dp"
@@ -26,7 +26,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Без картинок"
+        android:text="Without icons"
         android:id="@+id/finishTask"
         android:layout_below="@id/container_fragm"
         android:layout_toEndOf="@id/currentTask" />

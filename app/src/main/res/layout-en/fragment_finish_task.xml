@@ -17,7 +17,7 @@
             android:id="@+id/weather"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Солнечно"
+            android:text="Sunny"
             android:textSize="30dp" />
 
         <TextView
@@ -36,13 +36,13 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Угол ветра: "
+            android:text="Angle: "
             android:textSize="30dp" />
         <TextView
             android:id="@+id/winddeg"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Солнечно"
+            android:text="Sunny"
             android:textSize="30dp" />
 
         <TextView
@@ -61,7 +61,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Влажность:"
+            android:text="Humidity:"
             android:textSize="30dp" />
 
         <TextView

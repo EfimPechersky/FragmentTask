@@ -12,6 +12,8 @@ import com.google.gson.Gson
 import java.io.InputStream
 import java.io.InputStreamReader
 import java.net.URL
+import java.util.Locale
+
 private var TEMP = "param1"
 private var MAIN = "param2"
 private var WINDDEG = "param3"
@@ -40,8 +42,9 @@ class CurrentTaskFragment: Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_current_task, container, false)
         view.setBackgroundColor(Color.BLUE)
+        val currentLocale = Locale.getDefault().language
         var temptext:TextView = view.findViewById(R.id.temp)
-        temptext.text=temp+" c"
+        temptext.text = temp + " c"
         var img:ImageView = view.findViewById(R.id.weatherimage)
         when (main) {
             "Snow" -> img.setImageResource(R.drawable.snow)
@@ -53,17 +56,20 @@ class CurrentTaskFragment: Fragment() {
         }
         var degimg:ImageView = view.findViewById(R.id.windimage)
         var speedtext:TextView = view.findViewById(R.id.speed)
-        speedtext.text=speed+" м/c"
-        when(deg?.toInt()){
-            in 0..45 -> degimg.setRotation(0.0F)
-            in 45..90 -> degimg.setRotation(45.0F)
-            in 90..135 -> degimg.setRotation(90.0F)
-            in 135..180 -> degimg.setRotation(135.0F)
-            in 180..225 -> degimg.setRotation(180.0F)
-            in 225..270 -> degimg.setRotation(215.0F)
-            in 270..315 -> degimg.setRotation(270.0F)
-            in 315..360 -> degimg.setRotation(315.0F)
-            else->{degimg.setRotation(0.0F)
+        speedtext.text = speed + " м/c"
+        if (deg!="Loading") {
+            when (deg?.toInt()) {
+                in 0..45 -> degimg.setRotation(0.0F)
+                in 45..90 -> degimg.setRotation(45.0F)
+                in 90..135 -> degimg.setRotation(90.0F)
+                in 135..180 -> degimg.setRotation(135.0F)
+                in 180..225 -> degimg.setRotation(180.0F)
+                in 225..270 -> degimg.setRotation(215.0F)
+                in 270..315 -> degimg.setRotation(270.0F)
+                in 315..360 -> degimg.setRotation(315.0F)
+                else -> {
+                    degimg.setRotation(0.0F)
+                }
             }
         }
         var humtext:TextView = view.findViewById(R.id.humid)

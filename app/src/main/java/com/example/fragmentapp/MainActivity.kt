@@ -1,12 +1,12 @@
 package com.example.fragmentapp
 
+import android.content.Intent
+import android.content.res.Configuration
 import android.os.Bundle
-import android.view.View
+import android.util.Log
 import android.widget.Button
-import androidx.activity.enableEdgeToEdge
+import android.widget.Toolbar
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
@@ -17,6 +17,8 @@ import kotlinx.coroutines.launch
 import java.io.InputStream
 import java.io.InputStreamReader
 import java.net.URL
+import java.util.Locale
+
 
 class MainActivity : AppCompatActivity() {
     lateinit var fm: FragmentManager
@@ -31,7 +33,35 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        dialog.show(supportFragmentManager, "MyDialog")
+        val toolbar = findViewById<Toolbar>(R.id.toolbar)
+        town="Nothing"
+        toolbar.setTitle(R.string.app_name)
+        toolbar.inflateMenu(R.menu.languages)
+        toolbar.setOnMenuItemClickListener { item ->
+            var locale = Locale("ru")
+            when(item.toString()){
+                "Русский"->locale = Locale("ru")
+                "English"->locale = Locale("en")
+                else->locale = Locale("ru")
+            }
+            Locale.setDefault(locale)
+            val config: Configuration = baseContext.resources.configuration
+            config.locale = locale
+            baseContext.resources.updateConfiguration(config, baseContext.resources.displayMetrics)
+            val intent = Intent(this, MainActivity::class.java)
+            intent.putExtra("town", town) // Передача данных
+            startActivity(intent) // Запуск новой активности
+            finish(); true }
+        val extra = intent.getStringExtra("town")
+        if (extra is String){
+            town=extra
+            Log.d("mytag","item: $town")
+        }else {
+            dialog.show(supportFragmentManager, "MyDialog")
+        }
+        lifecycleScope.launch (Dispatchers.IO) {
+            loadWeather()
+        }
         fm = supportFragmentManager
         ft = fm.beginTransaction()
         fr2 = FinishTaskFragment()
@@ -105,12 +135,12 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        lifecycleScope.launch (Dispatchers.IO) {
-            loadWeather()
-        }
+
     }
     suspend fun loadWeather() {
-        town = dialog.town
+        if (town=="Nothing") {
+            town = dialog.town
+        }
         if (town!="Nothing") {
             val API_KEY = resources.getString(R.string.api) // TODO: ключ загрузить из строковых ресурсов
             // TODO: в строку подставлять API_KEY и город (выбирается из списка или вводится в поле)
